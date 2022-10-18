@@ -3,22 +3,23 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void f(void);
+void sub(void);
 
-int i;
 int main(int argc, char *argv[]) {
-	//전역변수, 범위는 소스파일 전체(연결경우x)
-	for (i=0;i<5;i++) //5번  
-	{
-		f(); //전역 변수 i가 같은 i라서 (data 영역의 i) 
-	}
+
+	int i;
+	for(i=0;i<3;i++)
+	sub();
 	return 0;
+
+
 }
-	
-	void f(void)
-	{
-		for(i=0;i<10;i++) //10번 
-		printf("#");
-	}
-
-
+void sub(void)
+{
+	int auto_count=0; // 자동 할당, 함수가 끝난 때에 stack에서 소멸 
+	static int static_count=0; // 정적 할당 
+	auto_count++;
+	static_count--;
+	printf("auto_count=%d\n",auto_count);
+	printf("static_count=%d\n",static_count);
+}
