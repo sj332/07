@@ -5,17 +5,13 @@
 
 int main(int argc, char *argv[]) {
 	
-	int flag=1;
-	int y;
+	int i;
 	
-	while(flag!=0)
+	for (i=0;i<5;i++)
 	{
-		 //선언의 범위가 중괄호 안 
-		y=3;
-		flag=0;
-	}
-	
-	y=4;
-	
+		int temp=1;
+		printf("temp=%d\n",temp); //각 회차마다 생성/소멸하는 temp 
+		temp++;
+	 } 
 	return 0;
 }
