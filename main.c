@@ -3,14 +3,14 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-//다른 파일을 연결 
+static int all_files; 
+	
+extern void sub(); //함수도 static가능 
+	
+int main(int argc, char *argv[])
+ {
 
-int all_files;
-
-extern void sub(); //전역변수 all_files들은 같은 변수 
-
-int main(int argc, char *argv[]) {
-	sub();
-	printf("%d\n",all_files);
-	return 0; 
+		sub();
+		printf("%d\n",all_files);
+	return 0; //undefined reference 
 }
